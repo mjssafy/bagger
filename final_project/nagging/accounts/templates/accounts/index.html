@@ -1,13 +1,82 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이데이터 자동가계부</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: '맑은 고딕', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* 네비게이션 바 */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar .menu {
+      display: flex;
+      gap: 30px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      color: #7c3aed;
+    }
+
+    /* 메인 섹션 */
+    .hero {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-    <h1>메인 페이지</h1>
-    <a href="{% url "accounts:login" %}">로그인</a>
-    <a href="{% url "accounts:signup" %}">회원가입</a>
+
+  <!-- 네비게이션 바 -->
+  <div class="navbar">
+    <div><a href="{% url "accounts:index" %}">로고</a></div>
+    <div class="menu">
+      <a href="{% url "accounts:function" %}">기능</a>
+      <a href="{% url "accounts:notice" %}">공지사항</a>
+      <a href="{% url 'accounts:signup' %}">회원가입</a>
+      <a href="{% url 'accounts:login' %}">로그인</a>
+    </div>
+  </div>
+
+  <!-- 메인 섹션 -->
+  <div class="hero">
+    <h1>마이데이터 기반 자동가계부</h1>
+    <p>마이데이터를 연결하기만 하면,<br>자동으로 분류해서 지출과 수입을 보여주는 간편 가계부</p>
+    <p style="color: red;">📌 내 입맛에 맞춰 카테고리를 재분류할 수 있어요</p>
+  </div>
+
 </body>
 </html>
